@@ -1,58 +1,66 @@
-const toDoForm = document.getElementById("todo-form");
-const toDoInput = toDoForm.querySelector("input");
-const toDoList = document.getElementById("todo-list");
+const missionForm = document.querySelector("#todo-form");
+const todoBox = document.querySelector("#todobox");
+const doneBox = document.querySelector("#donebox");
+const missionInput = missionForm.querySelector("input");
+
+
 
 let toDos = [];
 
-const TODOS_KEY = "todos"
+const TODO_KEY = "todos"
 
 function saveToDos(){
-    localStorage.setItem(TODOS_KEY,JSON.stringify(toDos));
-
+    localStorage.setItem(TODO_KEY, JSON.stringify(toDos))
 }
+
 function deleteToDo(event){
     const li = event.target.parentElement;
     li.remove();
     toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
     saveToDos();
 }
-
-function paintToDo(newToDo){
-    const li= document.createElement("li");
-    li.id = newToDo.id;
-    const span = document.createElement("span");
-    span.innerText = newToDo.text;
-    const button = document.createElement("button");
-    button.innerText = "❌";
-    button.addEventListener("click", deleteToDo)
-    li.appendChild(span);
-    li.appendChild(button);
+function doneToDo(event){
+    console.log("done!")
     
-    toDoList.appendChild(li);
 }
+function paintToDo(newToDo){
+    const li = document.createElement("li");
+    const span = document.createElement("span");
+    const button1 = document.createElement("button");
+    const button2 = document.createElement("button");
 
+    li.id = newToDo.id;
+    span.innerText = newToDo.text;
+    button1.innerText = "✅";
+    button1.addEventListener("click", doneToDo);
+    button2.innerText = "❌";
+    button2.addEventListener("click", deleteToDo);
+    li.appendChild(button1);
+    li.appendChild(span);
+    li.appendChild(button2);
 
+    todoBox.appendChild(li);
+}
 
 function handleToDoSubmit(event){
     event.preventDefault();
-    const newToDo = toDoInput.value;
-    toDoInput.value = "";
-    const newToDoObject = {
+    const newToDo = missionInput.value;
+    missionInput.value = "";
+    const newToDoObj = {
         text: newToDo,
         id: Date.now(),
     }
-    toDos.push(newToDoObject);
-    paintToDo(newToDoObject);
+    toDos.push(newToDoObj);
+    paintToDo(newToDoObj);
     saveToDos();
 }
 
-toDoForm.addEventListener("submit", handleToDoSubmit);
+missionForm.addEventListener("submit", handleToDoSubmit);
 
-const savedToDos = localStorage.getItem(TODOS_KEY);
+const savedToDos = localStorage.getItem(TODO_KEY);
 
 if(savedToDos !== null){
     const parsedToDos = JSON.parse(savedToDos);
     parsedToDos.forEach(paintToDo);
-    toDos = parsedToDos;
-}
-
+    toDos = parsedToDos;        
+};
