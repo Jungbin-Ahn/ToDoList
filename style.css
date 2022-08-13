@@ -30,6 +30,20 @@ body{
 }
 
 /* Greeting */
+.bgImage{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-position: center center;
+    z-index: -1;
+}
+.login-box{
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
 #login-form{
     position: absolute;
     top: 50%;
