@@ -41,10 +41,18 @@ quotes = [
     }
 ];
 
-const chosenQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-const quote = document.querySelector(".quotebox #quote");
-const author = document.querySelector(".quotebox #author");
+const roleQuoteButton = document.querySelector("#quotebutton")
+const quote = document.querySelector("#quote");
+const author = document.querySelector("#author");
 
-quote.innerText = chosenQuote.line;
-author.innerText = chosenQuote.author;
+
+function roleQuote(){
+    const chosenQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quote.innerText = chosenQuote.line;
+    author.innerText = chosenQuote.author;
+}
+
+roleQuote();
+
+roleQuoteButton.addEventListener("click",roleQuote);

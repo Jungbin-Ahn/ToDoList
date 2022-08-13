@@ -1,7 +1,6 @@
-const bg = document.querySelector("body");
+const bg = document.createElement("img");
 
-bg.style.backgroundImage = "url(image/bg.jpg)";
-bg.style.backgroundSize = "cover";
-bg.style.backgroundRepeat = "no-repeat";
-bg.style.height = "100vh";
-bg.style.backgroundPosition = "center";
+
+bg.src = `image/bg.jpg`;
+
+document.body.append(bg);

@@ -14,7 +14,11 @@ function onGeoOk(position){
         const takeOff = document.createElement("h3");
         if(data.visibility < 550 || data.weather[0].main === 'Clouds'){
             takeOff.innerText = 'NG, Take Off Disallowed';
-        }else{takeOff.innerText = 'Clear to Take Off';}
+            takeOff.style.color="red";
+        }else{
+            takeOff.innerText = 'Clear to Take Off';
+    takeOff.style.color="mediumblue";
+}
         weather.appendChild(takeOff);
     });
 }

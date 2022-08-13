@@ -1,55 +1,45 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const toDo = document.querySelector(".todobox");
-const greeting = document.querySelector("#greeting");
+const greeting = document.querySelector(".firstbox");
 const greetingMent = document.querySelector("#greeting h1");
-const logout = document.querySelector(".firstbox button")
+const toDo = document.querySelector("#todo");
+const logout = document.querySelector("#greeting button");
+
+
 
 const USERNAME_KEY = "username";
 const HIDDEN_CLASS = "hidden";
 
 function onLoginSubmit(info){
     info.preventDefault();
-    loginForm.classList.add(HIDDEN_CLASS);
-    localStorage.setItem(USERNAME_KEY, loginInput.value);
+    localStorage.setItem(USERNAME_KEY,loginInput.value);
     paintGreeting();
+}
+
+function paintGreeting(){
+    const username = localStorage.getItem(USERNAME_KEY);
+    loginForm.classList.add(HIDDEN_CLASS);
+    greetingMent.innerText = `Welcome ${username}, Prepare for the Take Off!`;
+    greeting.classList.remove(HIDDEN_CLASS);
 }
 
 function onLogOut(event){
     event.preventDefault();
-    toDo.classList.add(HIDDEN_CLASS);
-    greeting.classList.add(HIDDEN_CLASS);
     localStorage.removeItem(USERNAME_KEY);
-    localStorage.removeItem("todos");
+    greeting.classList.add(HIDDEN_CLASS);
     loginForm.classList.remove(HIDDEN_CLASS);
     loginInput.value = "";
-    removeAllChildNodes(toDoList);
-    toDos=[];
+    
 }
-function removeAllChildNodes(parent){
-    while(parent.firstChild){
-        parent.removeChild(parent.firstChild);
-    }
-}
-
-
-function paintGreeting(){
-    const username = localStorage.getItem(USERNAME_KEY);
-
-    greetingMent.innerText = `Welcome ${username}, Prepare for the take off!`;
-    greeting.classList.remove(HIDDEN_CLASS);
-    toDo.classList.remove(HIDDEN_CLASS);
-}
-
 
 loginForm.addEventListener("submit", onLoginSubmit);
 
-const savedUsername = localStorage.getItem(USERNAME_KEY);
-if (savedUsername === null){
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit", onLoginSubmit);
-}else {
-    paintGreetings();
+if(localStorage.getItem(USERNAME_KEY) === null){
+    greeting.classList.add(HIDDEN_CLASS)
+    loginForm.classList.remove(HIDDEN_CLASS);
+    loginForm.addEventListener("submit",onLoginSubmit);
+}else{
+    paintGreeting();
 }
 
 logout.addEventListener("click",onLogOut);

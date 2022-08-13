@@ -1,41 +1,149 @@
-hidden{
+.hidden{
     display: none;
 }
-@keyframes fadein{
+body{
+    overflow: hidden;
+    background-color: black;
+}
+@font-face {
+    font-family: "LAB디지털";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@keyframes fadein {
     from{
         opacity: 0;
-    }
+    } 
     to{
         opacity: 1;
     }
 }
-@keyframes fadeout{
+@keyframes fadeout {
     from{
         opacity: 1;
-    }
+    } 
     to{
         opacity: 0;
     }
 }
 
+/* Greeting */
+#login-form{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: aliceblue;
+    animation: fadein 3s;
 
-/* */
-.firstbox{
-    position: fixed;
-    background-color: rgba( 255, 255, 255, 0.2 );
+}
+#login-form input{
+    font-family: "LAB디지털";
+    background-color: black;
+    text-align: center;
+}
+#login-form input[type = "text"]{
+    font-size: 20pt;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-bottom: 3px double;
+    color: aliceblue;
+}
+#login-form input[type = "submit"]{
+    font-size: 20pt;
+    width: 110px;
+    margin-left: 10pt;
+    color: aliceblue;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    background-color: black;
+    border: 1;
+    border-color: aliceblue;
+
+}
+#login-form ::placeholder{
+    color: aliceblue;
     text-align: center;
 }
 
-/* */
+/* FirstBox */
+.firstbox{
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+    color: aliceblue;
+    animation: fadein 3s;
+
+}
+#greeting{
+    width: auto;
+    font-family: "LAB디지털";
+}
+#greeting button{
+    border: 1;
+    border-color: aliceblue;
+    font-family: "LAB디지털";
+    font-size: 15pt;
+    color: red;
+    background-color: black;
+}
+
+/* SecondBox */
 .secondbox{
-   position: fixed;
-   background-color: rgba( 255, 255, 255, 0.2 );
-
+    position: absolute;
+    top: 20%;
+    height: 25%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .2);
 }
 
-/* */
+/* ThirdBox */
 .thirdbox{
-    position: fixed;
-    background-color: rgba( 255, 255, 255, 0.2 );
-
+    position: absolute;
+    bottom: 5%;
+    height: 25%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .2);
+    font-family: "LAB디지털";
 }
+.first-section{
+    position: absolute;
+    background-color: aliceblue;
+}
+.clockbox{
+    color: greenyellow;
+}
+.second-section{
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    width: 20%;
+    height: max-content;
+    background-color: aliceblue;
+    left: 50%;
+}
+.second-section button{
+    border-color: aliceblue;
+    font-family: "LAB디지털";
+    font-size: 20pt;
+    color: red;
+    background-color: black;
+    
+}
+.third-section{
+    position: absolute;
+    background-color: aliceblue;
+    right: 5%;
+}
+.picturebox{
+    width: 100px;
+}
+.picturebox img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
