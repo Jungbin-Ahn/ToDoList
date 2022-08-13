@@ -2,7 +2,7 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector(".firstbox");
 const greetingMent = document.querySelector("#greeting h1");
-const toDo = document.querySelector("#todo");
+const toDo = document.querySelector(".secondbox");
 const logout = document.querySelector("#greeting button");
 
 
@@ -21,23 +21,31 @@ function paintGreeting(){
     loginForm.classList.add(HIDDEN_CLASS);
     greetingMent.innerText = `Welcome ${username}, Prepare for the Take Off!`;
     greeting.classList.remove(HIDDEN_CLASS);
+    toDo.classList.remove(HIDDEN_CLASS);
 }
 
 function onLogOut(event){
     event.preventDefault();
+    toDo.classList.add(HIDDEN_CLASS);
     localStorage.removeItem(USERNAME_KEY);
     greeting.classList.add(HIDDEN_CLASS);
     loginForm.classList.remove(HIDDEN_CLASS);
     loginInput.value = "";
-    
+    removeAllChildNodes(todoBox);
+    toDos=[];
 }
-
+function removeAllChildNodes(parent){
+    while (parent.firstChild){
+        parent.removeChild(parent.firstChild);
+    }
+}
 loginForm.addEventListener("submit", onLoginSubmit);
 
 if(localStorage.getItem(USERNAME_KEY) === null){
     greeting.classList.add(HIDDEN_CLASS)
     loginForm.classList.remove(HIDDEN_CLASS);
     loginForm.addEventListener("submit",onLoginSubmit);
+    toDo.classList.add(HIDDEN_CLASS);
 }else{
     paintGreeting();
 }
