@@ -15,6 +15,7 @@ function onGeoOk(position){
     .then((data) => {
         const weather = document.querySelector(".weatherbox");
         const temp = Math.round(data.main.temp);
+        if(data.name = ""){data.name = "Nowhere";}
         weather.innerText = `${data.name} ${data.weather[0].main}, ${temp}℃ `
         const takeOff = document.createElement("h3");
         if(data.visibility < 550 || ngWeather.includes(data.weather[0].main)){
