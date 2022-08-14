@@ -20,6 +20,11 @@ body{
         opacity: 1;
     }
 }
+@keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+  }  
 
 ::-webkit-scrollbar {
     display: none;

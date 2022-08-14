@@ -49,7 +49,7 @@ function roleTarget(){
     loc.innerText = chosenTarget.Location;
     mission.innerText = chosenTarget.Mission;
     etc.innerText = chosenTarget.Etc;
-    distance.innerText = `${chosenTarget.Distance}Km`;
+    distance.innerText = `${chosenTarget.Distance} Km`;
 }
 
 function distanceCalculator(){ 
