@@ -22,6 +22,9 @@ function paintGreeting(){
     greetingMent.innerText = `Welcome ${username}, Prepare for the Take Off!`;
     greeting.classList.remove(HIDDEN_CLASS);
     toDo.classList.remove(HIDDEN_CLASS);
+    bg.style.filter = "brightness(100%)";
+    thirdbox.style.filter = "brightness(100%)"
+
 }
 
 function onLogOut(event){
@@ -33,6 +36,8 @@ function onLogOut(event){
     loginInput.value = "";
     removeAllChildNodes(todoBox);
     toDos=[];
+    bg.style.filter = "brightness(20%)";
+    thirdbox.style.filter = "brightness(20%)"
 }
 function removeAllChildNodes(parent){
     while (parent.firstChild){

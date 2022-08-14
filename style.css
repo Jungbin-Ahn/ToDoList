@@ -20,15 +20,10 @@ body{
         opacity: 1;
     }
 }
-@keyframes fadeout {
-    from{
-        opacity: 1;
-    } 
-    to{
-        opacity: 0;
-    }
-}
 
+::-webkit-scrollbar {
+    display: none;
+  }
 /* Greeting */
 .bgImage{
     background-size: cover;
@@ -37,6 +32,7 @@ body{
     width: 100vw;
     background-position: center center;
     z-index: -1;
+    animation: fadein 2s;
 }
 .login-box{
     background-position: center;
@@ -46,7 +42,7 @@ body{
 }
 #login-form{
     position: absolute;
-    top: 50%;
+    top: 40%;
     width: 100%;
     text-align: center;
     color: aliceblue;
@@ -86,7 +82,7 @@ body{
 /* FirstBox */
 .firstbox{
     position: absolute;
-    top: 5%;
+    top: 7%;
     width: 100%;
     text-align: center;
     color: aliceblue;
@@ -99,7 +95,7 @@ body{
 }
 #greeting button{
     border: 1;
-    border-color: aliceblue;
+    border-color: orange;
     font-family: "LAB디지털";
     font-size: 15pt;
     color: red;
@@ -109,11 +105,118 @@ body{
 /* SecondBox */
 .secondbox{
     position: absolute;
-    top: 20%;
-    height: 25%;
+    top: 26%;
+    height: 27%;
     width: 100%;
-    background-color: rgba(255, 255, 255, .2);
+    font-family: "LAB디지털";
+    color: greenyellow;
+    animation: fadein 3s;
 }
+#todo-form{
+    position: absolute;
+    left: 27%;
+    width: 16%;
+    color: aliceblue;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+}
+#todo-form input{
+    font-family: "LAB디지털";
+    background-color: black;
+    text-align: center;
+    width: 117%;
+}
+#todo-form input[type = "text"]{
+    font-size: 15pt;
+    height: auto;
+    border: 2px solid greenyellow;
+   color: greenyellow;
+}
+#todo-form ::placeholder{
+    color: aliceblue;
+    text-align: center;
+}
+#todobox{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7) ;
+    width: 16%;
+    height: 89%;
+    top: 5%;
+    left: 27%;
+    list-style-type: none; 
+    overflow-y: scroll;
+    border: 2px solid greenyellow;
+    font-size: 18pt;
+}
+.item{
+    padding: 2px 2px;
+    margin: 5px;
+    align-items: center;
+    background-color: var(--color-bg);
+    border-radius: 20px;
+}
+.deletebutton{
+    background-color: transparent;
+    border: 2px solid red;
+    border-radius: 0.6em;
+    color: red;
+    cursor: pointer;
+    align-self: center;
+    line-height: 1;
+    margin-right: 7px;
+    margin-bottom: 3px;
+    padding: 3px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+#targetbox{
+    background-color: rgba(0, 0, 0, .7) ;
+    position: absolute;
+    left: 54%;  
+    top: 5%;  
+    width: 16%;
+    height: 89%;
+    list-style-type: square; 
+    font-size: 22pt;
+    border: 2px solid greenyellow;
+}
+#targetbox li{
+    font-size: 20pt ;
+    margin-top: 12px;
+    margin-bottom: 7px;
+}
+#targetbutton{
+    position: absolute;
+    left: 54%; 
+    width: 18.3%;
+    border: 2px solid greenyellow;
+    font-size: 17pt;
+    color: aliceblue;
+    background-color: black ;
+    font-family: "LAB디지털";
+}
+.second-section{
+    position: absolute;
+    font-size: 17pt;
+    width: 22%;
+    height: 75%;
+    top: 9%;
+    right: 0%;
+}
+.clockbox{
+    -webkit-text-stroke: .01px red;
+    color: black;
+}
+
+.weatherbox{
+    font-size: 18pt;
+    color: black;
+}
+
+
+
+
+
 
 /* ThirdBox */
 .thirdbox{
@@ -121,43 +224,65 @@ body{
     bottom: 5%;
     height: 25%;
     width: 100%;
-    background-color: rgba(255, 255, 255, .2);
-    font-family: "LAB디지털";
 }
 .first-section{
     position: absolute;
-    background-color: aliceblue;
+    color: aliceblue;
+    width: 44%;
+    height: 100%;
 }
-.clockbox{
-    color: greenyellow;
-}
-.second-section{
-    font-family: 'Courier New', Courier, monospace;
+.first-section button{
     position: absolute;
-    width: 20%;
-    height: max-content;
-    background-color: aliceblue;
-    left: 50%;
-}
-.second-section button{
-    border-color: aliceblue;
-    font-family: "LAB디지털";
-    font-size: 20pt;
+    right: 3%;
+    border-color: orange;
+    font-size: 15pt;
     color: red;
     background-color: black;
-    
 }
+#sticker{
+    position:absolute;
+    height: 50%;
+    width: 10%;
+    z-index: 1;
+}
+.quotebox{
+    position: relative;
+    background-color: rgb(160, 160, 38);
+    left: 3%;
+    top: 10%;
+    width: 30%;
+    height: 80%;
+    color: black;
+    filter: brightness(80%);
+}
+
+.quotebox h2{
+    margin: 20px 10px 0px 10px;
+}
+.quotebox h2:nth-child(1){
+    position: absolute;
+    top: 1%;
+}
+.quotebox h2:nth-child(2){
+    position: absolute;
+    right: 1%;
+    bottom: 2%;
+}
+
+
+
 .third-section{
     position: absolute;
-    background-color: aliceblue;
-    right: 5%;
-}
-.picturebox{
-    width: 100px;
+    right: 7%;
+    top: 13%;
+    height: 69%;
+    width: 12%;
 }
 .picturebox img{
-    display: block;
+    position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
+    border: 5px solid #fbc531;
 }
+
 

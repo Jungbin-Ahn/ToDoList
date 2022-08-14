@@ -8,7 +8,7 @@
   <title>To-Do List</title>
 </head>
 <body>
-    <img src="photo/bg.jpg" class="bgImage">
+  <img src="photo/bg.jpg" class="bgImage">
     <div class="login-box">
         <form id="login-form">
             <input required type="text" maxlength="15" placeholder="What is your Call Sign?">
@@ -25,39 +25,47 @@
   
   <div class="secondbox">
     <form id = "todo-form">
-        <input type="text" placeholder="Mission List" required/>
+        <input type="text" placeholder="Put Your Mission Here!" required/>
     </form>
+    <button id="targetbutton">Call Target</button>
     <ul id="todobox"></ul>
-    <ul id="donebox"></ul>
+    <ul id="targetbox">
+      <li id="location"></li>
+      <li id="distance"></li>
+      <li id="mission"></li>
+      <li id="etc"></li>
+    </ul>
+    <div class = "second-section">
+      <div class="clockbox">
+        <h2 id="date"></h2>
+        <h2 id="time"></h2>
+      </div>
+      <div class="weatherbox">
+      </div>
+    </div>
   </div>
 
   <div class="thirdbox">
     <div class="first-section">
-        <div class="clockbox">
-            <h2 id="date"></h2>
-            <h2 id="time"></h2>
-          </div>
-          <div class="weatherbox">
-      
-          </div>
+      <img src="photo/sticker.png" id="sticker">
+      <button id="quotebutton">ROLE!</button>
+      <div class="quotebox">
+          <h2 id="quote"></h2>
+          <h2 id="author"></h2>
+      </div> 
     </div>
-    <div class = "second-section">
-        <button id="quotebutton">ROLE!</button>
-        <div class="quotebox">
-            <h2 id="quote"></h2>
-            <h2 id="author"></h2>
-        </div>
-    </div>
+
     <div class="third-section">
         <div class="picturebox"></div>
     </div>
   </div>
-    <script src="greeting.js"></script>
-    <script src="clock.js"></script>
-    <script src="weather.js"></script>
-    <script src="quotes.js"></script>
-    <script src="picture.js"></script>
-    <script src="todo.js"></script>
-    <script src="background.js"></script>
+  <script src="js/background.js"></script>
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/picture.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/target.js"></script>
 </body>
 </html>
