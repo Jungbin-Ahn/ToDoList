@@ -117,6 +117,30 @@ body{
     color: greenyellow;
     animation: fadein 3s;
 }
+#music{
+    position: absolute;
+    background-color: black;
+    left: 5%;
+    width: 14%;
+    height: 30%;
+    color: fuchsia;
+    animation: fadein 3s;
+}
+#music #player{
+    display: none;
+}
+#music img{
+    margin: 5px 5px 5px 5px;
+    height: auto;
+    width: 20%;
+}
+#music span{
+    position: absolute;
+    bottom: 0%;
+    left: 1%;
+}
+
+
 #todo-form{
     position: absolute;
     left: 27%;
@@ -209,8 +233,7 @@ body{
     right: 0%;
 }
 .clockbox{
-    -webkit-text-stroke: .01px red;
-    color: black;
+    color: red;
 }
 
 .weatherbox{
